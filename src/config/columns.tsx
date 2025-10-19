@@ -1,4 +1,5 @@
 import { EditableComp } from "../components/EditableComp"
+import type { IMockData } from "../data/mockData"
 
 export const createTableColumns = (isEditing:boolean) => {
     return [
@@ -11,11 +12,8 @@ export const createTableColumns = (isEditing:boolean) => {
             title:"value1",
             dataIndex:"value1",
             key:"value1",
-            onCell:() => {
-                return {}
-            },
-            render:(value:string, record:any) => {
-                return <EditableComp value={value} isEditing={isEditing} record={record} />
+            render:(value:string,record:IMockData) => {
+                return <EditableComp isEditing={isEditing} record={record} />
             }
         },
         {
