@@ -6,7 +6,14 @@
  * @FilePath: \my-app-self-code\src\data\mockData.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-export const mockData = [
+export interface IMockData {
+    id: number
+    name: string
+    value1: number
+    value2: number
+    children?: IMockData[]
+}
+export const mockData:IMockData[] = [
     {    
         id:1,
         name:"John Doe",
